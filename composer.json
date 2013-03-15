@@ -1,0 +1,21 @@
+{
+	"name": "ioalessio/admincrudgenerator",
+	"type": "symfony-bundle",
+	"description": "Semi-Automatic admin crud generator",
+	"keywords": [ "admin generator", "crud", "Symfony2" ],
+	"license": "LGPL",
+	"authors": [
+		{
+			"name": "Alessio",
+			"email": "io.alessio@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"symfony/framework-bundle": ">=2.1,<2.3-dev"
+	},
+	"autoload": {
+		"psr-0": { "Io\\AdminCrudGeneratorBundle": "" }
+	},
+	"target-dir": "Io/AdminCrudGeneratorBundle"
+}
