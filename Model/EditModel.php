@@ -14,4 +14,7 @@ class EditModel
     protected $entity;
     protected $form;    
 
+    protected $template;
+    protected $formTemplate;
+    
 }
