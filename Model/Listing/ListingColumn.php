@@ -1,16 +1,15 @@
 <?php
 
-namespace Io\AdminCrudGeneratorBundle\Model;
+namespace Io\AdminCrudGeneratorBundle\Model\Listing;
 
     
-class ListFieldModel {
+class ListingColumn {
 
-    protected $attribute;
     
     protected $label;
-    
-    protected $value;
-    
+
+    protected $attribute;
+        
     protected $sortable;
     
     protected $editable;
@@ -25,6 +24,7 @@ class ListFieldModel {
 
     public function setAttribute($attribute) {
         $this->attribute = $attribute;
+        return $this;
     }
 
     public function getLabel() {
@@ -33,6 +33,7 @@ class ListFieldModel {
 
     public function setLabel($label) {
         $this->label = $label;
+        return $this;
     }
 
     public function getValue() {
@@ -41,6 +42,7 @@ class ListFieldModel {
 
     public function setValue($value) {
         $this->value = $value;
+        return $this;
     }
 
     public function getSortable() {
@@ -53,6 +55,7 @@ class ListFieldModel {
 
     public function getEditable() {
         return $this->editable;
+        return $this;
     }
 
     public function setEditable($editable) {
@@ -65,6 +68,7 @@ class ListFieldModel {
 
     public function setUrl($url) {
         $this->url = $url;
+        return $this;
     }
 
     public function getJson() {
@@ -73,6 +77,7 @@ class ListFieldModel {
 
     public function setJson($json) {
         $this->json = $json;
+        return $this;
     }
    
 }

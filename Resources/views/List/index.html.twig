@@ -1,0 +1,56 @@
+{% extends "IoAdminCrudGeneratorBundle::layout.html.twig" %}
+
+
+    {% block content_content %}
+    <div class="io_acg_div">
+        <div class="row-fluid">
+            <div class="span8">
+                <div class="io_acg_table">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            {% for column in page.table.columns  %}
+                            <th>{{ column.label }}</th>
+                            {% endfor %}
+                            <th colspan="{{ page.table.actions|length }}">Actions</th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                            {% for row in page.table.rows %}
+                            <tr  id="{{ row.id }}" class="{{ row.class }}" {% for attr,label in row.attr %} {{ label }}="{{ attr }}" {% endfor %}>
+                                {% for column in row.columns %}
+                                <td id="{{ column.id }}" class="{{ column.class }}" {% for label,attr in column.attr %} {{ label }}="{{ attr }}" {% endfor %}>{{ column.value }}</td>
+                                {# potrei usare il filter twig per renderizzare codice twig #}
+                                {# set column.template = '{{ column.value }}' #}
+                                {# column.template|twig({ 'column':column }) #}
+                                {% endfor %}
+                                {% for action in page.table.actions %}
+
+                                <td><a href="{{ path(action.route, { 'id' : row.pk } ) }}"><i class="icon-{{ action.icon }}"></i> {{ action.label }}</a> 
+                                </td>{% endfor %} 
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="pagination pagination-small pagination-centered">
+                      <ul>
+                        <li><a href="#">Prev</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">Next</a></li>
+                      </ul>
+                    </div>                
+                </div>
+
+            </div>
+            <div class="span4">
+                FILTRI
+            </div>
+        </div>
+    </div>
+    {% endblock content_content %}
+
